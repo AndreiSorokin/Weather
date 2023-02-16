@@ -1,0 +1,283 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+}
+
+body{
+   width: 100vw;
+   height: 100vh;
+   padding: 0;
+   --background-color:#f4f4f4;
+   --text-color:#dcd029;
+   color: var(--text-color);
+   background-color: var(--background-color);
+   transition-duration: .7s;
+   overflow: hidden;
+}
+body.dark{
+   --background-color:#111111;
+}
+
+.container{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+.change-theme{
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.5rem;
+   position: absolute;
+   top: 80vh;
+   left: 15vw;
+   width: 14vw;
+   height: 8vh;
+   border-radius: 15px;
+   background-image: linear-gradient(to bottom, #5f29c4 40%, #000 60%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-color: #f4f4f4;
+   font-size: 1.2em;
+   transition-duration: .7s;
+}
+.change-theme:hover{
+   scale: 1.1;
+}
+.dark .change-theme {
+   color: #c4d10b;
+}
+.dark .change-theme {
+   background-image: linear-gradient(to bottom, #fff 20%, #000 90%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   border-color: #f4f4f4;
+}
+
+.icons{
+   --rotation: 0;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 0;
+   left: 50%;
+   pointer-events: none;
+   height: 110vh;
+   transform: rotate(calc(var(--rotation)*1deg));
+   transition-duration: .7s;
+}
+.dark .icons{
+   --rotation: 360deg;
+}
+
+.sun,
+.moon{
+   position: absolute;
+   fill: var(--text-color);
+}
+.sun{
+   top: 5%;
+   opacity: 1;
+}
+.dark .sun{
+   opacity: 0;
+}
+.moon{
+   bottom: 5%;
+   opacity: 0;
+}
+.dark .moon{
+   top: 5%;
+   opacity: 1;
+   fill: #fff;
+}
+
+.icon{
+   width: 4vw;
+   height: 7vh;
+}
+
+.light-dark{
+   fill: #5f29c4;
+}
+.dark .light-dark{
+   fill: #c4d10b;
+}
+
+.inscription{
+   position: absolute;
+   display: flex;
+   top: 20vh;
+   font-size: 5vw;
+   letter-spacing: 0.4vw;
+}
+.dark .inscription{
+   background-image: linear-gradient(to bottom, #fff, #000);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.item{
+   margin: 1rem;
+}
+
+.input{
+   width: 10vw;
+   height: 4vh;
+   border-radius: 20px;
+   padding: .5rem;
+   transform: translate(0, 100%);
+}
+.dark .input {
+   background-color: var(--background-color);
+   border-color: #f4f4f4;
+   color: #f4f4f4;
+}
+
+.button{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   background-color: transparent;
+   border-radius: 10px;
+   width: 7vw;
+   height: 4vh;
+   transform: translate(0, 180%);
+   transition-duration: .7s;
+}
+.button:hover{
+   scale: 1.1;
+}
+.dark .button{
+   border-color: #fff;
+   color: #f4f4f4;
+}
+
+.content{
+   position: relative;
+   margin-top: 2vh;
+   transform: translate(0, 30%);
+   color: var(--text-color);
+}
+.dark .content{
+   color: #f4f4f4;
+}
+
+footer{
+   position: absolute;
+   bottom: 0;
+   left: 0.2vw;
+   color: #454545;
+}
+
+.star {
+   height:3px;
+   width: 3px;
+   background: #f4f4f4;
+   position: absolute;
+   z-index:0;
+}
+#star1 {
+   top: 20px;
+   left: 20%;
+}
+#star1 + .star {
+top: 20px;
+left: 70%;
+}
+#star2 {
+   top: 80px;
+   left: 4%;
+}
+#star2 + .star {
+   top: 80px;
+   left: 75%;
+}
+#star3 {
+   top:150px;
+   left: 3%;
+}
+#star3 + .star {
+   top:150px;
+   left: 90%;
+}
+#star4 {
+   top:100px;
+   left: 7%;
+}
+#star4 + .star {
+   top:100px;
+   left: 78%;
+}
+#star5 {
+   top:130px;
+   left:13%;
+}
+#star5 + .star {
+   top:130px;
+   left: 60%;
+}
+#star6 {
+   height: 5px;
+   width: 5px;
+   top:50px;
+   left: 18%;
+}
+#star6 + .star {
+   height: 5px;
+   width: 5px;
+   top:50px;
+   left: 92%;
+}
+#star7 {
+   top:35px;
+   left: 27%;
+}
+#star7 + .star {
+   top:35px;
+   left: 79%;
+}
+#star8 {
+   top:35px;
+   left: 900px;
+}
+#star8 + .star{
+   top:35px;
+   left: 88%;
+}
+#star9 {
+   height: 4px;
+   width: 4px;
+   top:50px;
+   left: 45%;
+}
+#star9 + .star {
+   height: 4px;
+   width: 4px;
+   top:50px;
+   left: 97%;
+}
+#star10 {
+   top:100px;
+   left: 44%;
+}
+#star10 + .star{
+   top:100px;
+   left: 83%;
+}
+#star11 {
+   top:75px;
+   left: 37%;
+}
+#star11 + .star{
+   top:75px;
+   left: 66%;
+}
